@@ -1,33 +1,18 @@
 # Moneta – Dasbor Keuangan Pribadi
 
-Aplikasi dasbor keuangan pribadi untuk mencatat transaksi, mengatur anggaran, menabung, dan merencanakan target keuangan.
+Isi folder:
+- index.html        : aplikasi (satu file)
+- config.js         : tempat mengisi URL & kunci Supabase  <-- WAJIB DIISI
+- supabase-setup.sql: dijalankan sekali di Supabase (SQL Editor)
+- vercel.json       : pengaturan hosting Vercel
 
-## Cara Menjalankan
+## Langkah
+1. Supabase: buat project > SQL Editor > tempel isi supabase-setup.sql > Run.
+2. Supabase: Authentication > Providers > Email > matikan "Confirm email".
+3. Supabase: Project Settings > API > salin "Project URL" dan "anon public key".
+4. Buka config.js, tempel kedua nilai tersebut (kunci anon, BUKAN service_role).
+5. Upload seluruh isi folder ini ke Vercel (drag & drop folder, atau lewat GitHub). index.html harus berada di akar folder.
+6. Buka alamat Vercel dengan Ctrl+Shift+R. Daftar dengan NAMA LENGKAP HURUF BESAR dan NIS 9 digit.
+7. Cek: Pengaturan menampilkan "Tersinkron ..." dan tombol "Sinkron sekarang".
 
-### Cara 1: Langsung Buka (Paling Mudah)
-1. Ekstrak file ZIP / tar.gz
-2. Buka folder `moneta-dashboard`
-3. Klik dua kali file `index.html` — akan terbuka di browser
-
-### Cara 2: Dengan Live Server (Direkomendasikan)
-Jika Anda menggunakan **VS Code**:
-1. Install ekstensi **Live Server** dari marketplace
-2. Buka folder `moneta-dashboard` di VS Code
-3. Klik kanan `index.html` → **Open with Live Server**
-
-Atau gunakan **Python** (sudah terinstal di kebanyakan komputer):
-```bash
-cd moneta-dashboard
-python3 -m http.server 8000
-```
-Lalu buka `http://localhost:8000` di browser.
-
-Atau gunakan **Node.js**:
-```bash
-npx -y serve ./moneta-dashboard
-```
-
-## Catatan
-- Aplikasi ini berjalan sepenuhnya di browser (client-side), tidak perlu server atau database.
-- Data disimpan di `localStorage` browser.
-- Membutuhkan koneksi internet untuk memuat font Google (Inter & Material Symbols). Tanpa internet, aplikasi tetap berjalan tetapi font akan menggunakan fallback bawaan browser.
+Semua perangkat harus membuka alamat hosting yang sama dan login dengan nama + NIS yang sama.
